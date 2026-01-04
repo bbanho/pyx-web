@@ -6,15 +6,24 @@
     <title>PYX Engenharia e Consultoria</title>
     <meta name="description" content="Engenharia Aeronáutica, Mecânica, Consultoria e Perícia." />
     
-    <!-- Google Fonts -->
+    <!-- Preconnect to critical domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Google Fonts (Deferred/Non-blocking) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- Tailwind CSS -->
+    <!-- Note: CDN script kept blocking to ensure core styles are applied before first paint (preventing massive FOUC) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class', // Disables system-based automatic dark mode
         theme: {
           extend: {
             fontFamily: {
@@ -40,10 +49,16 @@
       }
     </script>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome (Deferred/Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
     
     <style>
+      :root {
+        color-scheme: light; /* Forces browser native UI elements (scrollbars, inputs) to light mode */
+      }
       html { scroll-behavior: smooth; }
       body { -webkit-font-smoothing: antialiased; }
 
@@ -95,12 +110,11 @@
     "react": "https://esm.sh/react@^19.2.3",
     "react/": "https://esm.sh/react@^19.2.3/",
     "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
-    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
-  <script type="module" crossorigin src="./assets/index-DEn4vU_u.js"></script>
+  <script type="module" crossorigin src="./assets/index-icAjSsdo.js"></script>
 </head>
   <body class="bg-slate-50 text-slate-800">
     <div id="root"></div>
